@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gym_app/stateManagement/features/DotsFeature.dart';
+import 'package:gym_app/view/screen/Auth/Login.dart';
 import 'package:gym_app/view/screen/landingPage/onboardding.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: OnBoarding(),
+        home: Login(),
       ),
     );
   }
