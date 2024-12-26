@@ -4,6 +4,5 @@ import 'package:flutter/material.dart';
 
 class ConstColors {
   static Color primaryColor = Color(0xFF45ADF7);
-  static Color bg2 = Color(0xFF191A1E);
-  static Color bg1 = Color(0xFF333740);
+  static Color bg = Color(0xFF0D0D0D);
 }

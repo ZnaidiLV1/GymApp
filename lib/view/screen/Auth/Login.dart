@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:gym_app/core/constant/colors.dart';
@@ -14,7 +14,7 @@ class Login extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        backgroundColor: ConstColors.bg2,
+        backgroundColor: ConstColors.bg,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -23,15 +23,14 @@ class Login extends StatelessWidget {
                 top: 40.0,
               ),
               child: Row(
-                mainAxisAlignment:
-                    MainAxisAlignment.start, // Aligns the TabBar to the left
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Flexible(
                     child: TabBar(
-                      indicator: null, // Removes the white line
+                      indicator: null,
                       isScrollable: true,
                       indicatorWeight: 9,
-                      dividerColor: ConstColors.bg2,
+                      dividerColor: ConstColors.bg,
                       indicatorColor: ConstColors.primaryColor,
                       labelColor: Colors.white,
                       unselectedLabelColor: Colors.white,
@@ -49,22 +48,24 @@ class Login extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Text(
-                    "hi",
-                    style: TextStyle(color: Colors.white),
-                  )
+                  Padding(
+                    padding: EdgeInsets.only(
+                        right: MediaQuery.of(context).size.width * 0.03),
+                    child: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage("images/logo.jpg"),
+                    ),
+                  ),
                 ],
               ),
             ),
-            // TabBarView to handle the content
             Expanded(
               child: TabBarView(
                 children: [
-                  // Login Tab Content
-                  Center(
-                    child: LoginForm(),
-                  ),
-                  // Sign Up Tab Content
+                  Padding(
+                      padding: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.09),
+                      child: LoginForm()),
                   Center(
                     child: SignUpForm(),
                   ),
