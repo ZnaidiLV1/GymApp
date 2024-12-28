@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:gym_app/core/shared/ButtonDown.dart';
 import 'package:gym_app/core/shared/TextField.dart';
+import 'package:gym_app/view/screen/Auth/Gender.dart';
 
 class SignUpForm extends StatelessWidget {
   TextEditingController emailC = new TextEditingController();
@@ -54,7 +55,16 @@ class SignUpForm extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.width * 0.03,
           ),
-          ButtonDown(title: "Next")
+          ButtonDown(
+            title: "Next",
+            isTwo: true,
+            leftFunction: () {},
+            rightFunction: () {
+              print("test");
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => Gender()));
+            },
+          )
         ],
       ),
     );

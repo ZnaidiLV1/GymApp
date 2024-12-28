@@ -3,10 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:gym_app/core/shared/ButtonDown.dart';
 import 'package:gym_app/core/shared/TextField.dart';
+import 'package:gym_app/view/widget/Auth/SignUpForm.dart';
 
 class LoginForm extends StatelessWidget {
-  TextEditingController emailC=new TextEditingController();
-  TextEditingController passwordC=new TextEditingController();
+  TextEditingController emailC = new TextEditingController();
+  TextEditingController passwordC = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -27,9 +28,9 @@ class LoginForm extends StatelessWidget {
                   top: MediaQuery.of(context).size.width * 0.06, left: 15),
               decoration: BoxDecoration(boxShadow: [
                 BoxShadow(
-                  color: Colors.black, 
-                  blurRadius: 25.0, 
-                  spreadRadius: 10.0, 
+                  color: Colors.black,
+                  blurRadius: 25.0,
+                  spreadRadius: 10.0,
                   offset: Offset(0, 10),
                 )
               ]),
@@ -44,7 +45,7 @@ class LoginForm extends StatelessWidget {
           ]),
           TF(contoller: emailC, labelText: "Email"),
           SizedBox(height: 10),
-         TF(contoller: passwordC, labelText: "Password"),
+          TF(contoller: passwordC, labelText: "Password"),
           SizedBox(height: 20),
           Row(
             children: [
@@ -85,28 +86,14 @@ class LoginForm extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.width * 0.03,
           ),
-          ButtonDown(title: "Login")
+          ButtonDown(
+            title: "Login",
+            isTwo: true,
+            leftFunction: () {},
+            rightFunction: () {},
+          )
         ],
       ),
     );
   }
-}
-
-class CustomCutClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path = Path();
-
-    path.lineTo(0, size.height);
-    path.lineTo(
-      size.width,
-      size.height * 0.7,
-    );
-    path.lineTo(size.width, 0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }

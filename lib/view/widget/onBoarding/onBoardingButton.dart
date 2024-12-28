@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:gym_app/core/constant/colors.dart';
-import 'package:gym_app/view/screen/Auth/Login.dart';
+import 'package:gym_app/view/screen/Auth/LoginSignup.dart';
 
 class OnBoardingButton extends StatelessWidget {
   const OnBoardingButton({super.key});
