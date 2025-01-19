@@ -3,8 +3,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gym_app/core/shared/ButtonDown.dart';
 import 'package:gym_app/core/shared/TextField.dart';
+import 'package:gym_app/stateManagement/global/auth/SignUpCubit.dart';
 import 'package:gym_app/view/screen/Auth/Gender.dart';
 
 class SignUpForm extends StatelessWidget {
@@ -38,7 +40,7 @@ class SignUpForm extends StatelessWidget {
                 )
               ]),
               child: Text(
-                "Welcome Back",
+                "Get Started!",
                 style: TextStyle(
                   fontSize: 40,
                   color: Colors.white,
@@ -46,11 +48,35 @@ class SignUpForm extends StatelessWidget {
               ),
             )
           ]),
-          TF(contoller: emailC, labelText: "Email"),
-          SizedBox(height: 10),
-          TF(contoller: passwordC, labelText: "Password"),
-          SizedBox(height: 10),
-          TF(contoller: confirmC, labelText: "Confirm Password"),
+          BlocBuilder<SignUpCubit, SignUpC>(
+            builder: (BuildContext context, SignUpC state) {
+              return Column(
+                children: [
+                  TF(
+                    contoller: state.email,
+                    labelText: "Email",
+                    onChanged: (String value) {
+                      context.read<SignUpCubit>().updateEmail(value);
+                    },
+                  ),
+                  SizedBox(height: 10),
+                  TF(
+                    contoller: state.password,
+                    labelText: "Password",
+                    onChanged: (String value) {
+                      context.read<SignUpCubit>().updateEmail(value);
+                    },
+                  ),
+                  SizedBox(height: 10),
+                ],
+              );
+            },
+          ),
+          TF(
+            contoller: confirmC,
+            labelText: "Confirm Password",
+            onChanged: (String value) {},
+          ),
           SizedBox(height: 20),
           SizedBox(
             height: MediaQuery.of(context).size.width * 0.03,

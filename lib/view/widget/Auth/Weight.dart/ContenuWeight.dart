@@ -2,15 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gym_app/core/constant/colors.dart';
 
-class ContenuAge extends StatelessWidget {
-  final List<int> age = List.generate(83, (index) => 18 + index);
-  final int selectedAge;
-  final ValueChanged<int> onAgeChanged;
+class Contenuweight extends StatelessWidget {
+  final List<int> weight = List.generate(201, (index) => 40 + index);
+  final int selectedweight;
+  final ValueChanged<int> onweightChanged;
 
-  ContenuAge({
+  Contenuweight({
     super.key,
-    required this.selectedAge,
-    required this.onAgeChanged,
+    required this.selectedweight,
+    required this.onweightChanged,
   });
 
   @override
@@ -30,18 +30,18 @@ class ContenuAge extends StatelessWidget {
                   child: CupertinoPicker(
                     itemExtent: 60,
                     onSelectedItemChanged: (index) {
-                      onAgeChanged(age[index]);
+                      onweightChanged(weight[index]);
                     },
                     scrollController: FixedExtentScrollController(
-                      initialItem: age.indexOf(selectedAge),
+                      initialItem: weight.indexOf(selectedweight),
                     ),
-                    children: age.map((itemAge) {
+                    children: weight.map((itemweight) {
                       return Center(
                         child: Text(
-                          '$itemAge',
+                          '$itemweight  kg',
                           style: TextStyle(
                             fontSize: 24,
-                            color: Colors.white, 
+                            color: Colors.white,
                           ),
                         ),
                       );

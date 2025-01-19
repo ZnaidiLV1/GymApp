@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 class TF extends StatelessWidget {
   String labelText;
   TextEditingController contoller;
-  TF({super.key, required this.contoller, required this.labelText});
+  ValueChanged<String> onChanged;
+  TF({super.key, required this.contoller, required this.labelText,
+  required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +15,7 @@ class TF extends StatelessWidget {
       padding: EdgeInsets.only(
           top: MediaQuery.of(context).size.height * 0.02, left: 15, right: 15),
       child: TextField(
+        onChanged : onChanged,
         style: TextStyle(color: Colors.white),
         cursorColor: Colors.white,
         decoration: InputDecoration(

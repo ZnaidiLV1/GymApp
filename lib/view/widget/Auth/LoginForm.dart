@@ -43,9 +43,11 @@ class LoginForm extends StatelessWidget {
               ),
             )
           ]),
-          TF(contoller: emailC, labelText: "Email"),
+          TF(contoller: emailC, labelText: "Email", onChanged: (String value) {  },),
           SizedBox(height: 10),
-          TF(contoller: passwordC, labelText: "Password"),
+          TF(contoller: passwordC, labelText: "Password", onChanged: (String value) { 
+            
+           },),
           SizedBox(height: 20),
           Row(
             children: [
