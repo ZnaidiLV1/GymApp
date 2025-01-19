@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-class ConstColors{
-  static  Color primaryColor=Color(0xFF45ADF7);
-
+class ConstColors {
+  static Color primaryColor = Color(0xFF45ADF7);
+  static Color bg = Color(0xFF0D0D0D);
 }

@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gym_app/stateManagement/features/DotsFeature.dart';
-import 'package:gym_app/view/screen/landingPage/onboardding.dart';
+import 'package:gym_app/stateManagement/features/GenderCubit.dart';
+import 'package:gym_app/stateManagement/global/auth/SignUpCubit.dart';
+import 'package:gym_app/view/screen/Home/HomePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,11 +18,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_)=>PageBloc())
+        BlocProvider(create: (_)=>PageBloc()),
+        BlocProvider(create: (_)=>GenderCubit()),
+        BlocProvider(create: (_)=>SignUpCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: OnBoarding(),
+        home: HomePage(),
       ),
     );
   }
