@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gym_app/stateManagement/features/DotsFeature.dart';
 import 'package:gym_app/stateManagement/features/GenderCubit.dart';
+import 'package:gym_app/stateManagement/features/MainGoalCubit.dart';
+import 'package:gym_app/stateManagement/features/StepsCubit.dart';
 import 'package:gym_app/stateManagement/global/auth/SignUpCubit.dart';
-import 'package:gym_app/view/screen/Home/HomePage.dart';
+import 'package:gym_app/view/screen/Auth/MainGoal.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,10 +23,12 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_)=>PageBloc()),
         BlocProvider(create: (_)=>GenderCubit()),
         BlocProvider(create: (_)=>SignUpCubit()),
+        BlocProvider(create: (_)=>StepsCubit()),
+        BlocProvider(create: (_)=>Maingoalcubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        home: MainGoal(),
       ),
     );
   }
