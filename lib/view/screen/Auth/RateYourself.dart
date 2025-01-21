@@ -6,6 +6,7 @@ import 'package:gym_app/core/shared/ProgressIndicator.dart';
 import 'package:gym_app/core/shared/navigator_utils.dart';
 import 'package:gym_app/stateManagement/features/RateYourselCubit.dart';
 import 'package:gym_app/stateManagement/features/StepsCubit.dart';
+import 'package:gym_app/view/screen/Auth/TargetArea.dart';
 import 'package:gym_app/view/widget/steps/RateYourself/RateYourselfContainer.dart';
 
 class RateYourself extends StatelessWidget {
@@ -24,11 +25,12 @@ class RateYourself extends StatelessWidget {
         children: [
           Progressindicator(),
           Container(
-            padding: EdgeInsets.only(top: 20),
+            padding:
+                EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02),
             child: Text(
-              "How Do You  think You \nLook Like Now ?",
+              "How Do You think You \nLook Like Now ?",
               style: TextStyle(
-                  fontSize: 33,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
             ),
@@ -51,7 +53,7 @@ class RateYourself extends StatelessWidget {
                       context.read<StepsCubit>().nextStep();
                       NavigatorUtils.pushWithTransition(
                         context,
-                        RateYourself(),
+                        Targetarea(),
                         begin: Offset(1.0, 0.0),
                         curve: Curves.easeInOut,
                         duration: Duration(seconds: 1),
@@ -71,7 +73,7 @@ class RateYourself extends StatelessWidget {
                       context.read<StepsCubit>().nextStep();
                       NavigatorUtils.pushWithTransition(
                         context,
-                        RateYourself(),
+                        Targetarea(),
                         begin: Offset(1.0, 0.0),
                         curve: Curves.easeInOut,
                         duration: Duration(seconds: 1),
@@ -91,7 +93,7 @@ class RateYourself extends StatelessWidget {
                       context.read<StepsCubit>().nextStep();
                       NavigatorUtils.pushWithTransition(
                         context,
-                        RateYourself(),
+                        Targetarea(),
                         begin: Offset(1.0, 0.0),
                         curve: Curves.easeInOut,
                         duration: Duration(seconds: 1),
