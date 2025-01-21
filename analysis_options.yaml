@@ -9,7 +9,7 @@
 # packages, and plugins designed to encourage good coding practices.
 analyzer:
   errors:
-    non_constant_identifier_names: ignore
+    non_constant_identifier_names: ignore ignore
     prefer_const_constructors: ignore
     prefer_const_literals_to_create_immutables: ignore
     sized ignore_box_for_whitespace: ignore

@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gym_app/stateManagement/features/DotsFeature.dart';
 import 'package:gym_app/stateManagement/features/GenderCubit.dart';
 import 'package:gym_app/stateManagement/features/MainGoalCubit.dart';
+import 'package:gym_app/stateManagement/features/RateYourselCubit.dart';
 import 'package:gym_app/stateManagement/features/StepsCubit.dart';
 import 'package:gym_app/stateManagement/global/auth/SignUpCubit.dart';
 import 'package:gym_app/view/screen/Auth/MainGoal.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_)=>SignUpCubit()),
         BlocProvider(create: (_)=>StepsCubit()),
         BlocProvider(create: (_)=>Maingoalcubit()),
+        BlocProvider(create: (_)=>Rateyourselcubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

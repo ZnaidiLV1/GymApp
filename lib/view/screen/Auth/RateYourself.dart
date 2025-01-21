@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gym_app/core/constant/colors.dart';
+import 'package:gym_app/core/shared/AppbarSteps.dart';
 import 'package:gym_app/core/shared/ProgressIndicator.dart';
+import 'package:gym_app/core/shared/navigator_utils.dart';
+import 'package:gym_app/stateManagement/features/RateYourselCubit.dart';
 import 'package:gym_app/stateManagement/features/StepsCubit.dart';
+import 'package:gym_app/view/widget/steps/RateYourself/RateYourselfContainer.dart';
 
 class RateYourself extends StatelessWidget {
   const RateYourself({super.key});
@@ -13,33 +17,90 @@ class RateYourself extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: ConstColors.bg,
-        title: Row(
-          children: [
-            IconButton(
-                onPressed: () {
-                  context.read<StepsCubit>().previousStep();
-                  Navigator.of(context).pop();
-                },
-                icon: Icon(
-                  Icons.arrow_back_ios_sharp,
-                  color: ConstColors.primaryColor,
-                )),
-            BlocBuilder<StepsCubit, int>(
-                builder: (BuildContext context, int state) {
-              return Text(
-                "Step ${state}  of 13",
-                style: TextStyle(
-                    color: ConstColors.primaryColor,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w500),
-              );
-            }),
-          ],
-        ),
+        title: Appbarsteps(),
       ),
       backgroundColor: ConstColors.bg,
       body: Column(
-        children: [Progressindicator()],
+        children: [
+          Progressindicator(),
+          Container(
+            padding: EdgeInsets.only(top: 20),
+            child: Text(
+              "How Do You  think You \nLook Like Now ?",
+              style: TextStyle(
+                  fontSize: 33,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            ),
+          ),
+          BlocBuilder<Rateyourselcubit, String>(
+              builder: (BuildContext context, String state) {
+            return Column(
+              children: [
+                RateYourselfContainer(
+                    imageAsset: "images/averge.png",
+                    MainText: "slim Body",
+                    border: Border.all(
+                      color: state == "regular"
+                          ? ConstColors.primaryColor
+                          : ConstColors.secondaryColor,
+                      width: 3,
+                    ),
+                    ontapVoid: () {
+                      context.read<Rateyourselcubit>().regularEmit();
+                      context.read<StepsCubit>().nextStep();
+                      NavigatorUtils.pushWithTransition(
+                        context,
+                        RateYourself(),
+                        begin: Offset(1.0, 0.0),
+                        curve: Curves.easeInOut,
+                        duration: Duration(seconds: 1),
+                      );
+                    }),
+                RateYourselfContainer(
+                    imageAsset: "images/slim.png",
+                    MainText: "Regular Body",
+                    border: Border.all(
+                      color: state == "slim"
+                          ? ConstColors.primaryColor
+                          : ConstColors.secondaryColor,
+                      width: 3,
+                    ),
+                    ontapVoid: () {
+                      context.read<Rateyourselcubit>().slimEmit();
+                      context.read<StepsCubit>().nextStep();
+                      NavigatorUtils.pushWithTransition(
+                        context,
+                        RateYourself(),
+                        begin: Offset(1.0, 0.0),
+                        curve: Curves.easeInOut,
+                        duration: Duration(seconds: 1),
+                      );
+                    }),
+                RateYourselfContainer(
+                    imageAsset: "images/fat.png",
+                    MainText: "Fat Body",
+                    border: Border.all(
+                      color: state == "fat"
+                          ? ConstColors.primaryColor
+                          : ConstColors.secondaryColor,
+                      width: 3,
+                    ),
+                    ontapVoid: () {
+                      context.read<Rateyourselcubit>().fatEmit();
+                      context.read<StepsCubit>().nextStep();
+                      NavigatorUtils.pushWithTransition(
+                        context,
+                        RateYourself(),
+                        begin: Offset(1.0, 0.0),
+                        curve: Curves.easeInOut,
+                        duration: Duration(seconds: 1),
+                      );
+                    }),
+              ],
+            );
+          })
+        ],
       ),
     );
   }
