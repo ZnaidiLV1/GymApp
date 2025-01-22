@@ -20,15 +20,10 @@ class Gender extends StatelessWidget {
             UpperTextGender(),
             ContenuGender(),
             ButtonDown(
-                title: "Next",
-                isTwo: false,
-                leftFunction: () {
-                  Navigator.of(context).pop();
-                },
-                rightFunction: () {
-                  Navigator.of(context).push( 
-                  MaterialPageRoute(builder: (context)=>Age()));
-                })
+            title: "Next",isEnabled: true, onPressed: () { 
+               Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => Age()));
+             })
           ],
         ),
       ),

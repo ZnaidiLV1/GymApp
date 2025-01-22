@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:gym_app/core/shared/ButtonDown.dart';
 import 'package:gym_app/core/shared/TextField.dart';
+import 'package:gym_app/view/screen/Auth/Height.dart';
 import 'package:gym_app/view/widget/Auth/SignUpForm.dart';
 
 class LoginForm extends StatelessWidget {
@@ -89,11 +90,10 @@ class LoginForm extends StatelessWidget {
             height: MediaQuery.of(context).size.width * 0.03,
           ),
           ButtonDown(
-            title: "Login",
-            isTwo: true,
-            leftFunction: () {},
-            rightFunction: () {},
-          )
+            title: "Next",isEnabled: true, onPressed: () { 
+               Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => Height()));
+             })
         ],
       ),
     );

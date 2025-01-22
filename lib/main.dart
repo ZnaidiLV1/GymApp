@@ -4,12 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gym_app/stateManagement/features/DotsFeature.dart';
 import 'package:gym_app/stateManagement/features/GenderCubit.dart';
+import 'package:gym_app/stateManagement/features/HappinessCubit.dart';
 import 'package:gym_app/stateManagement/features/MainGoalCubit.dart';
 import 'package:gym_app/stateManagement/features/RateYourselCubit.dart';
 import 'package:gym_app/stateManagement/features/StepsCubit.dart';
 import 'package:gym_app/stateManagement/features/TargetBodyCubit.dart';
 import 'package:gym_app/stateManagement/global/auth/SignUpCubit.dart';
+import 'package:gym_app/view/screen/Auth/Happiness.dart';
 import 'package:gym_app/view/screen/Auth/MainGoal.dart';
+import 'package:gym_app/view/screen/Auth/FitnessLevel.dart';
+import 'package:gym_app/view/screen/Auth/TargetArea.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,11 +32,12 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_)=>StepsCubit()),
         BlocProvider(create: (_)=>Maingoalcubit()),
         BlocProvider(create: (_)=>Rateyourselcubit()),
-        BlocProvider(create: (_)=>Targetbodycubit())
+        BlocProvider(create: (_)=>Targetbodycubit()),
+        BlocProvider(create: (_)=>Happinesscubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: MainGoal(),
+        home: Motivation(),
       ),
     );
   }

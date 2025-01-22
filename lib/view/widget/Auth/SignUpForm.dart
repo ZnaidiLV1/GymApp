@@ -82,15 +82,10 @@ class SignUpForm extends StatelessWidget {
             height: MediaQuery.of(context).size.width * 0.03,
           ),
           ButtonDown(
-            title: "Next",
-            isTwo: true,
-            leftFunction: () {},
-            rightFunction: () {
-              print("test");
-              Navigator.of(context)
+            title: "Next",isEnabled: true, onPressed: () { 
+               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (context) => Gender()));
-            },
-          )
+             })
         ],
       ),
     );

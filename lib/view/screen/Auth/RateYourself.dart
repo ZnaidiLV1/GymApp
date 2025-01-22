@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gym_app/core/constant/colors.dart';
 import 'package:gym_app/core/shared/AppbarSteps.dart';
 import 'package:gym_app/core/shared/ProgressIndicator.dart';
-import 'package:gym_app/core/shared/navigator_utils.dart';
+import 'package:gym_app/core/functions/navigator_utils.dart';
 import 'package:gym_app/stateManagement/features/RateYourselCubit.dart';
 import 'package:gym_app/stateManagement/features/StepsCubit.dart';
 import 'package:gym_app/view/screen/Auth/TargetArea.dart';

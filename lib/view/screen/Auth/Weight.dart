@@ -31,15 +31,10 @@ class Weight extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.15,
           ),
           ButtonDown(
-              title: "Next",
-              isTwo: false,
-              leftFunction: () {
-                Navigator.of(context).pop();
-              },
-              rightFunction: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => HomePage()));
-              })
+            title: "Next",isEnabled: true, onPressed: () { 
+               Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => HomePage()));
+             })
         ],
       ),
     );
