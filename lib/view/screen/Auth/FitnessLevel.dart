@@ -11,8 +11,8 @@ import 'package:gym_app/view/widget/Auth/FitnessLevel/FitnessRow.dart';
 import 'package:gym_app/view/widget/Auth/FitnessLevel/FitnessScale.dart';
 import 'package:gym_app/view/widget/Auth/FitnessLevel/FitnessText.dart';
 
-class Motivation extends StatelessWidget {
-  const Motivation({super.key});
+class Fitnesslevel extends StatelessWidget {
+  const Fitnesslevel({super.key});
 
   @override
   Widget build(BuildContext context) {
