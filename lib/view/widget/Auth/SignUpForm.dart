@@ -4,10 +4,11 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gym_app/core/functions/navigator_utils.dart';
 import 'package:gym_app/core/shared/ButtonDown.dart';
 import 'package:gym_app/core/shared/TextField.dart';
 import 'package:gym_app/stateManagement/global/auth/SignUpCubit.dart';
-import 'package:gym_app/view/screen/Auth/Gender.dart';
+import 'package:gym_app/view/screen/Auth/MainGoal.dart';
 
 class SignUpForm extends StatelessWidget {
   TextEditingController emailC = new TextEditingController();
@@ -82,10 +83,17 @@ class SignUpForm extends StatelessWidget {
             height: MediaQuery.of(context).size.width * 0.03,
           ),
           ButtonDown(
-            title: "Next",isEnabled: true, onPressed: () { 
-               Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => Gender()));
-             })
+              title: "Next",
+              isEnabled: true,
+              onPressed: () {
+                NavigatorUtils.pushWithTransition(
+                  context,
+                  MainGoal(),
+                  begin: Offset(1.0, 0.0),
+                  curve: Curves.easeInOut,
+                  duration: Duration(seconds: 1),
+                );
+              })
         ],
       ),
     );

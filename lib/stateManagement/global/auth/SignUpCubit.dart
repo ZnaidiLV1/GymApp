@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,6 +9,7 @@ class SignUpC {
   int age;
   int height;
   int weight;
+  int TargetWeight;
 
   SignUpC({
     required this.gender,
@@ -16,6 +18,7 @@ class SignUpC {
     required this.age,
     required this.height,
     required this.weight,
+    required this.TargetWeight,
   });
 }
 
@@ -27,7 +30,7 @@ class SignUpCubit extends Cubit<SignUpC> {
           password: TextEditingController(),
           age: 20,
           height: 160,
-          weight: 60,
+          weight: 60, TargetWeight: 60,
         ));
 
   void updateEmail(String email) {
@@ -38,7 +41,7 @@ class SignUpCubit extends Cubit<SignUpC> {
       password: state.password,
       age: state.age,
       height: state.height,
-      weight: state.weight,
+      weight: state.weight, TargetWeight: state.TargetWeight,
     ));
   }
 
@@ -50,7 +53,7 @@ class SignUpCubit extends Cubit<SignUpC> {
       password: state.password,
       age: state.age,
       height: state.height,
-      weight: state.weight,
+      weight: state.weight, TargetWeight: state.TargetWeight
     ));
   }
 
@@ -61,7 +64,7 @@ class SignUpCubit extends Cubit<SignUpC> {
       password: state.password,
       age: state.age,
       height: state.height,
-      weight: state.weight,
+      weight: state.weight, TargetWeight: state.TargetWeight
     ));
   }
 
@@ -72,7 +75,7 @@ class SignUpCubit extends Cubit<SignUpC> {
       password: state.password,
       age: age,
       height: state.height,
-      weight: state.weight,
+      weight: state.weight, TargetWeight: state.TargetWeight
     ));
   }
 
@@ -83,7 +86,7 @@ class SignUpCubit extends Cubit<SignUpC> {
       password: state.password,
       age: state.age,
       height: height,
-      weight: state.weight,
+      weight: state.weight, TargetWeight: state.TargetWeight
     ));
   }
 
@@ -94,7 +97,18 @@ class SignUpCubit extends Cubit<SignUpC> {
       password: state.password,
       age: state.age,
       height: state.height,
-      weight: weight,
+      weight: weight, TargetWeight: state.TargetWeight
+    ));
+  }
+
+  void updateTargetWeight(int weight) {
+    emit(SignUpC(
+      gender: state.gender,
+      email: state.email,
+      password: state.password,
+      age: state.age,
+      height: state.height,
+      weight: state.weight, TargetWeight: weight
     ));
   }
 }

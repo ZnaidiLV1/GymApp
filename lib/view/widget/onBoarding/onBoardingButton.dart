@@ -29,7 +29,7 @@ class OnBoardingButton extends StatelessWidget {
             },
             child: Icon(
               Icons.arrow_forward_sharp,
-              color: const Color.fromARGB(255, 0, 0, 0),
+              color: Color.fromARGB(255, 255, 255, 255),
               size: 30,
             ),
           ),

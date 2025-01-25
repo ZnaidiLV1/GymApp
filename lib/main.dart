@@ -11,11 +11,7 @@ import 'package:gym_app/stateManagement/features/RateYourselCubit.dart';
 import 'package:gym_app/stateManagement/features/StepsCubit.dart';
 import 'package:gym_app/stateManagement/features/TargetBodyCubit.dart';
 import 'package:gym_app/stateManagement/global/auth/SignUpCubit.dart';
-import 'package:gym_app/view/screen/Auth/Happiness.dart';
-import 'package:gym_app/view/screen/Auth/MainGoal.dart';
-import 'package:gym_app/view/screen/Auth/FitnessLevel.dart';
-import 'package:gym_app/view/screen/Auth/Motivation.dart';
-import 'package:gym_app/view/screen/Auth/TargetArea.dart';
+import 'package:gym_app/view/screen/landingPage/onboardding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,20 +24,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_)=>PageBloc()),
-        BlocProvider(create: (_)=>GenderCubit()),
-        BlocProvider(create: (_)=>SignUpCubit()),
-        BlocProvider(create: (_)=>StepsCubit()),
-        BlocProvider(create: (_)=>Maingoalcubit()),
-        BlocProvider(create: (_)=>Rateyourselcubit()),
-        BlocProvider(create: (_)=>Targetbodycubit()),
-        BlocProvider(create: (_)=>Happinesscubit()),
-        BlocProvider(create: (_)=>Motivationcubit())
+        BlocProvider(create: (_) => PageBloc()),
+        BlocProvider(create: (_) => GenderCubit()),
+        BlocProvider(create: (_) => SignUpCubit()),
+        BlocProvider(create: (_) => StepsCubit()),
+        BlocProvider(create: (_) => Maingoalcubit()),
+        BlocProvider(create: (_) => Rateyourselcubit()),
+        BlocProvider(create: (_) => Targetbodycubit()),
+        BlocProvider(create: (_) => Happinesscubit()),
+        BlocProvider(create: (_) => Motivationcubit())
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Motivation(),
-      ),
+      child: MaterialApp(debugShowCheckedModeBanner: false, home: OnBoarding()),
     );
   }
 }

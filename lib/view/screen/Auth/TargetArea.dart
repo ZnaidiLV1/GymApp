@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gym_app/core/constant/colors.dart';
+import 'package:gym_app/core/functions/navigator_utils.dart';
 import 'package:gym_app/core/shared/AppbarSteps.dart';
 import 'package:gym_app/core/shared/ButtonDown.dart';
 import 'package:gym_app/core/shared/ProgressIndicator.dart';
+import 'package:gym_app/stateManagement/features/StepsCubit.dart';
 import 'package:gym_app/stateManagement/features/TargetBodyCubit.dart';
-import 'package:gym_app/view/screen/Auth/Height.dart';
+import 'package:gym_app/view/screen/Auth/Happiness.dart';
 import 'package:gym_app/view/widget/steps/TargetArea/ButtonAndLine.dart';
 import 'package:gym_app/view/widget/steps/TargetArea/TargetAreaPhoto.dart';
 import 'package:gym_app/view/widget/steps/TargetArea/lines/line.dart';
@@ -46,8 +48,14 @@ class Targetarea extends StatelessWidget {
                         title: "Next",
                         isEnabled: isEnabled,
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Height()));
+                          context.read<StepsCubit>().nextStep();
+                          NavigatorUtils.pushWithTransition(
+                            context,
+                            Happiness(),
+                            begin: Offset(1.0, 0.0),
+                            curve: Curves.easeInOut,
+                            duration: Duration(seconds: 1),
+                          );
                         });
                   }),
                 ),

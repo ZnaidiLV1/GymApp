@@ -9,7 +9,7 @@ class UpperTextHeight extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          SizedBox(height: MediaQuery.of(context).size.height * 0.08),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.02),
           Text(
             "What Is Your Height?",
             style: TextStyle(

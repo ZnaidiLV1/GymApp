@@ -4,7 +4,7 @@ import 'package:gym_app/core/constant/colors.dart';
 import 'package:gym_app/core/functions/navigator_utils.dart';
 import 'package:gym_app/stateManagement/features/HappinessCubit.dart';
 import 'package:gym_app/stateManagement/features/StepsCubit.dart';
-import 'package:gym_app/view/screen/Home/HomePage.dart';
+import 'package:gym_app/view/screen/Auth/Motivation.dart';
 
 class Happinesscontenu extends StatelessWidget {
   final String text;
@@ -24,14 +24,14 @@ class Happinesscontenu extends StatelessWidget {
     return InkWell(
       onTap: () {
         context.read<Happinesscubit>().updateIndex(index);
-         context.read<StepsCubit>().nextStep();
-         NavigatorUtils.pushWithTransition(
-                      context,
-                      HomePage(),
-                      begin: Offset(1.0, 0.0),
-                      curve: Curves.easeInOut,
-                      duration: Duration(seconds: 1),
-                    );
+        context.read<StepsCubit>().nextStep();
+        NavigatorUtils.pushWithTransition(
+          context,
+          Motivation(),
+          begin: Offset(1.0, 0.0),
+          curve: Curves.easeInOut,
+          duration: Duration(seconds: 1),
+        );
       },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 10),

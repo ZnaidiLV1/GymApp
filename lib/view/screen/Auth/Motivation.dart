@@ -8,7 +8,7 @@ import 'package:gym_app/core/shared/ButtonDown.dart';
 import 'package:gym_app/core/shared/ProgressIndicator.dart';
 import 'package:gym_app/stateManagement/features/MotivationCubit.dart';
 import 'package:gym_app/stateManagement/features/StepsCubit.dart';
-import 'package:gym_app/view/screen/Home/HomePage.dart';
+import 'package:gym_app/view/screen/Auth/FitnessLevel.dart';
 import 'package:gym_app/view/widget/Auth/Motivation/MotivationContenu.dart';
 
 class Motivation extends StatelessWidget {
@@ -71,7 +71,7 @@ class Motivation extends StatelessWidget {
                     context.read<StepsCubit>().nextStep();
                 NavigatorUtils.pushWithTransition(
                   context,
-                  HomePage(),
+                  Fitnesslevel(),
                   begin: Offset(1.0, 0.0),
                   curve: Curves.easeInOut,
                   duration: Duration(seconds: 1),

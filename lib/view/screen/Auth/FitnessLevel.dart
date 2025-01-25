@@ -6,7 +6,7 @@ import 'package:gym_app/core/shared/AppbarSteps.dart';
 import 'package:gym_app/core/shared/ButtonDown.dart';
 import 'package:gym_app/core/shared/ProgressIndicator.dart';
 import 'package:gym_app/stateManagement/features/StepsCubit.dart';
-import 'package:gym_app/view/screen/Home/HomePage.dart';
+import 'package:gym_app/view/screen/Auth/Gender.dart';
 import 'package:gym_app/view/widget/Auth/FitnessLevel/FitnessRow.dart';
 import 'package:gym_app/view/widget/Auth/FitnessLevel/FitnessScale.dart';
 import 'package:gym_app/view/widget/Auth/FitnessLevel/FitnessText.dart';
@@ -19,7 +19,7 @@ class Fitnesslevel extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: null,
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
         backgroundColor: ConstColors.bg,
         title: Appbarsteps(),
       ),
@@ -52,7 +52,7 @@ class Fitnesslevel extends StatelessWidget {
                 context.read<StepsCubit>().nextStep();
                 NavigatorUtils.pushWithTransition(
                   context,
-                  HomePage(),
+                  Gender(),
                   begin: Offset(1.0, 0.0),
                   curve: Curves.easeInOut,
                   duration: Duration(seconds: 1),

@@ -9,7 +9,7 @@ class UpperTextAge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: MediaQuery.of(context).size.height * 0.08),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.02),
         Text(
           "How Old Are You?",
           style: TextStyle(

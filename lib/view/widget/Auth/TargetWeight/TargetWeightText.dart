@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class UpperTextWeight extends StatelessWidget {
-  const UpperTextWeight({super.key});
+class UpperTextTargetWeight extends StatelessWidget {
+  const UpperTextTargetWeight({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class UpperTextWeight extends StatelessWidget {
         children: [
           SizedBox(height: MediaQuery.of(context).size.height * 0.02),
           Text(
-            "What Is Your Weight?",
+            "What Is Your Target Weight?",
             style: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.w500,
@@ -21,7 +21,7 @@ class UpperTextWeight extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Text(
-            "Slide to select your Weight in kilograms.",
+            "Slide to select your Target Weight in kilograms.",
             style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w400,

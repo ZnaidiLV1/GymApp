@@ -19,7 +19,7 @@ class MainGoal extends StatelessWidget {
       backgroundColor: ConstColors.bg,
       appBar: AppBar(
         leading: null,
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
         backgroundColor: ConstColors.bg,
         title: Appbarsteps(),
       ),

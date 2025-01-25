@@ -8,12 +8,12 @@ import 'package:gym_app/core/shared/ButtonDown.dart';
 import 'package:gym_app/core/shared/ProgressIndicator.dart';
 import 'package:gym_app/stateManagement/features/StepsCubit.dart';
 import 'package:gym_app/stateManagement/global/auth/SignUpCubit.dart';
-import 'package:gym_app/view/screen/Auth/TargetWeight.dart';
+import 'package:gym_app/view/screen/Auth/Age.dart';
+import 'package:gym_app/view/widget/Auth/TargetWeight/TargetWeightText.dart';
 import 'package:gym_app/view/widget/Auth/Weight.dart/ContenuWeight.dart';
-import 'package:gym_app/view/widget/Auth/Weight.dart/UpperTextWeight.dart';
 
-class Weight extends StatelessWidget {
-  const Weight({super.key});
+class Targetweight extends StatelessWidget {
+  const Targetweight({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +27,13 @@ class Weight extends StatelessWidget {
       body: Column(
         children: [
           Progressindicator(),
-          UpperTextWeight(),
+          UpperTextTargetWeight(),
           BlocBuilder<SignUpCubit, SignUpC>(
             builder: (BuildContext context, SignUpC state) {
               return Contenuweight(
                 selectedweight: state.weight,
                 onweightChanged: (int value) {
-                  context.read<SignUpCubit>().updateWeight(value);
+                  context.read<SignUpCubit>().updateTargetWeight(value);
                 },
               );
             },
@@ -48,7 +48,7 @@ class Weight extends StatelessWidget {
                 context.read<StepsCubit>().nextStep();
                 NavigatorUtils.pushWithTransition(
                       context,
-                      Targetweight(),
+                      Age(),
                       begin: Offset(1.0, 0.0),
                       curve: Curves.easeInOut,
                       duration: Duration(seconds: 1),
